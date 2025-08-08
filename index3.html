@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Workflow Optimization System</title>
+  <link rel="stylesheet" href="style3.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Header -->
+  <header class="app-header">
+    <img src="image3.png" alt="Logo" class="logo">
+    <h1>AI Workflow Optimization System</h1>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container">
+
+    <!-- Input Section -->
+    <section class="card">
+      <h2>Workflow Input</h2>
+      <div class="input-row">
+        <input type="text" id="taskInput" placeholder="Enter task name..." />
+        <input type="number" id="durationInput" placeholder="Duration (mins)" />
+        <button onclick="addTask()">Add Task</button>
+      </div>
+    </section>
+
+    <!-- Timeline & KPIs -->
+    <section class="card collapsible">
+      <h2 onclick="toggleCollapse(this)">📅 Workflow Timeline & KPIs</h2>
+      <div class="content">
+        <ul id="taskTimeline"></ul>
+        <div class="kpi">
+          <p>Total Tasks: <span id="totalTasks">0</span></p>
+          <p>Average Duration: <span id="avgDuration">0</span> mins</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Suggestions -->
+    <section class="card collapsible">
+      <h2 onclick="toggleCollapse(this)">🤖 AI Suggestions</h2>
+      <div class="content">
+        <ul id="suggestionsList">
+          <li>Suggestions will appear here as data is analyzed.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Graph Section -->
+    <section class="card collapsible">
+      <h2 onclick="toggleCollapse(this)">📊 Workflow Trends</h2>
+      <div class="content">
+        <canvas id="workflowChart"></canvas>
+      </div>
+    </section>
+
+    <!-- Export & Print -->
+    <section class="card">
+      <h2>📤 Export & Print</h2>
+      <button onclick="exportToCSV()">Export to CSV</button>
+      <button onclick="window.print()">Print / Save as PDF</button>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2025 AI Workflow Optimization | SampTeck Systems
+  </footer>
+
+  <script src="script3.js"></script>
+</body>
+</html>

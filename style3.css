@@ -1,0 +1,209 @@
+/* Root Variables */
+:root {
+  --primary: #4f46e5;
+  --secondary: #06b6d4;
+  --background: #f9fafb;
+  --text: #111827;
+  --card: #ffffff;
+  --accent: #9333ea;
+  --transition: 0.3s ease-in-out;
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+/* THEME COLORS */
+:root {
+  --card-bg: #ffffff;
+  --text: #222;
+  --accent: #0066ff;
+  --toast-bg: #323232;
+  --primary: #4f46e5;
+  --secondary: #06b6d4;
+  --background: #f9fafb;
+  --transition: 0.3s ease-in-out;
+}
+
+body.dark {
+  --bg: #121212;
+  --card-bg: #1e1e1e;
+  --text: #f4f4f4;
+  --accent: #00ccff;
+  --toast-bg: #eeeeee;
+}
+
+/* HEADER */
+.app-header {
+  position: sticky;
+  top: 0;
+  background-color: var(--card-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+.app-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  flex: 1;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--accent);
+}
+
+/* MAIN CONTAINER */
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* CARD STYLING */
+.card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+/* INPUT ROW */
+.input-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.input-row input, .input-row button {
+  flex: 1;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.input-row button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.input-row button:hover {
+  background-color: #0055cc;
+}
+
+/* COLLAPSIBLE SECTIONS */
+.collapsible h2 {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.collapsible .content {
+  margin-top: 1rem;
+  display: block;
+}
+
+.collapsible.collapsed .content {
+  display: none;
+}
+
+/* KPI STATS */
+.kpi {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.kpi span {
+  font-weight: bold;
+  color: var(--accent);
+}
+
+/* TASK TIMELINE */
+#taskTimeline {
+  margin-top: 1rem;
+  list-style: none;
+}
+
+#taskTimeline li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ccc;
+}
+
+/* TOAST */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--toast-bg);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-weight: bold;
+  display: none;
+  z-index: 10000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  background-color: var(--card-bg);
+  color: var(--text);
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .input-row {
+    flex-direction: column;
+  }
+
+  .kpi {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .app-header h1 {
+    font-size: 1.3rem;
+  }
+}
